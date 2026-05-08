@@ -1,0 +1,15 @@
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\bin\Debug\net10.0\desafio poo.exe
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\bin\Debug\net10.0\desafio poo.deps.json
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\bin\Debug\net10.0\desafio poo.runtimeconfig.json
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\bin\Debug\net10.0\desafio poo.dll
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\bin\Debug\net10.0\desafio poo.pdb
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.AssemblyInfoInputs.cache
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.AssemblyInfo.cs
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.csproj.CoreCompileInputs.cache
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.sourcelink.json
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.dll
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\refint\desafio poo.dll
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.pdb
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\desafio poo.genruntimeconfig.cache
+C:\Users\alvro\Downloads\desafios-de-ed\desafio poo\obj\Debug\net10.0\ref\desafio poo.dll
