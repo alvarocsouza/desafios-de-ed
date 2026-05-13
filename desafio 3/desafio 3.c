@@ -183,7 +183,7 @@ void liberarLista(ListaCircular lista) {
 }
 
 /* =========================================================
-   FUNCOES PARA IMPLEMENTAR
+   FUNCOES IMPLEMENTADAS
    ========================================================= */
 
 /*
@@ -195,7 +195,17 @@ Se o atual for monstro, deve procurar um jogador.
 Se nao existir inimigo, retorne NULL.
 */
 Celula buscaInimigoMaisProximo(Celula atual) {
-    /* IMPLEMENTAR */
+    if (atual == NULL) return NULL;
+    
+    Celula aux = atual->prox;
+    
+    while (aux != atual) {
+        if (aux->personagem.tipo != atual->personagem.tipo) {
+            return aux;
+        }
+        aux = aux->prox;
+    }
+    
     return NULL;
 }
 
@@ -210,7 +220,40 @@ Casos importantes:
 - alvo esta no meio
 */
 void removeDaListaCircular(ListaCircular lista, Celula alvo) {
-    /* IMPLEMENTAR */
+    if (listaVazia(lista) || alvo == NULL) return;
+    
+    Celula aux;
+    
+    // Caso 1: único elemento
+    if (lista->inicio == alvo && lista->inicio->prox == lista->inicio) {
+        free(alvo);
+        lista->inicio = NULL;
+        lista->fim = NULL;
+        return;
+    }
+    
+    // Encontrar o nó anterior ao alvo
+    aux = lista->inicio;
+    while (aux->prox != alvo && aux->prox != lista->inicio) {
+        aux = aux->prox;
+    }
+    
+    // Caso 2: alvo é o início
+    if (alvo == lista->inicio) {
+        lista->inicio = alvo->prox;
+        lista->fim->prox = lista->inicio;
+    }
+    // Caso 3: alvo é o fim
+    else if (alvo == lista->fim) {
+        lista->fim = aux;
+        aux->prox = lista->inicio;
+    }
+    // Caso 4: alvo está no meio
+    else {
+        aux->prox = alvo->prox;
+    }
+    
+    free(alvo);
 }
 
 /*
@@ -227,8 +270,50 @@ Passos sugeridos:
 7. retornar o ponteiro do proximo personagem que devera agir
 */
 Celula executaUmTurno(ListaCircular lista, Celula atual) {
-    /* IMPLEMENTAR */
-    return NULL;
+    if (listaVazia(lista) || atual == NULL) return NULL;
+    
+    Celula inimigo = buscaInimigoMaisProximo(atual);
+    Celula proximo = atual->prox;
+    
+    if (inimigo == NULL) return proximo;
+    
+    int danoTotal = atual->personagem.dano;
+    
+    // Verifica se tem habilidade (20% de chance)
+    if (atual->personagem.temHabilidade) {
+        float chance = (float)rand() / RAND_MAX;
+        if (chance < 0.2) {
+            danoTotal = (int)(danoTotal * atual->personagem.habilidade.modificador);
+            printf("%s usou %s e causou %d de dano!\n", 
+                   atual->personagem.nome,
+                   atual->personagem.habilidade.nome,
+                   danoTotal);
+        } else {
+            printf("%s causou %d de dano!\n", 
+                   atual->personagem.nome, danoTotal);
+        }
+    } else {
+        printf("%s causou %d de dano!\n", 
+               atual->personagem.nome, danoTotal);
+    }
+    
+    // Aplica o dano
+    inimigo->personagem.vida -= danoTotal;
+    printf("%s agora tem %d de vida\n", 
+           inimigo->personagem.nome, inimigo->personagem.vida);
+    
+    // Verifica se o inimigo morreu
+    if (inimigo->personagem.vida <= 0) {
+        printf("%s foi derrotado!\n", inimigo->personagem.nome);
+        removeDaListaCircular(lista, inimigo);
+        
+        // Se o inimigo removido era o próximo da rodada, ajusta
+        if (proximo == inimigo) {
+            proximo = atual->prox;
+        }
+    }
+    
+    return proximo;
 }
 
 /* =========================================================
