@@ -18,10 +18,10 @@ public class BST {
     }
     
     public void Insert(int value) {
-        root = InsertRecursive(root, value);
+        root = InsertRecursivo(root, value);
     }
     
-    private Node InsertRecursive(Node? current, int value) {
+    private Node InsertRecursivo(Node? current, int value) {
         if (current == null) {
             return new Node(value);
         }
@@ -31,29 +31,29 @@ public class BST {
         }
         
         if (value < current.Key) {
-            current.Left = InsertRecursive(current.Left, value);
+            current.Left = InsertRecursivo(current.Left, value);
         } 
         else {
-            current.Right = InsertRecursive(current.Right, value);
+            current.Right = InsertRecursivo(current.Right, value);
         }
         
         return current;
     }
     
     public Node? Search(int value) {
-        return SearchRecursive(root, value);
+        return SearchRecursivo(root, value);
     }
     
-    private Node? SearchRecursive(Node? current, int value) {
+    private Node? SearchRecursivo(Node? current, int value) {
         if (current == null || current.Key == value) {
             return current;
         }
         
         if (value < current.Key) {
-            return SearchRecursive(current.Left, value);
+            return SearchRecursivo(current.Left, value);
         }
         else {
-            return SearchRecursive(current.Right, value);
+            return SearchRecursivo(current.Right, value);
         }
     }
     
@@ -67,14 +67,14 @@ public class BST {
         return current;
     }
     
-    public Node? MaximoRecursivo() {
-        return MaximoRecursivoHelper(root);
+    public Node? maximoRecursivo() {
+        return MaximoRecursivo(root);
     }
     
-    private Node? MaximoRecursivoHelper(Node? current) {
+    private Node? MaximoRecursivo(Node? current) {
         if (current == null) return null;
         if (current.Right == null) return current;
-        return MaximoRecursivoHelper(current.Right);
+        return MaximoRecursivo(current.Right);
     }
     
     public Node? Minimo() {
@@ -87,29 +87,29 @@ public class BST {
         return current;
     }
     
-    public Node? MinimoRecursivo() {
-        return MinimoRecursivoHelper(root);
+    public Node? minimoRecursivo() {
+        return MinimoRecursivo(root);
     }
     
-    private Node? MinimoRecursivoHelper(Node? current) {
+    private Node? MinimoRecursivo(Node? current) {
         if (current == null) return null;
         if (current.Left == null) return current;
-        return MinimoRecursivoHelper(current.Left);
+        return MinimoRecursivo(current.Left);
     }
         public void PrintInOrder() {
-        PrintInOrderRecursive(root);
+        PrintInOrderRecursivo(root);
         Console.WriteLine();
     }
     
-    private void PrintInOrderRecursive(Node? node) {
+    private void PrintInOrderRecursivo(Node? node) {
         if (node != null) {
-            PrintInOrderRecursive(node.Left);
+            PrintInOrderRecursivo(node.Left);
             Console.Write(node.Key + " ");
-            PrintInOrderRecursive(node.Right);
+            PrintInOrderRecursivo(node.Right);
         }
     }
     
-    public void PrintInOrderIterative() {
+    public void PrintInOrderIterativo() {
         if (root == null) return;
         
         Stack<Node> stack = new Stack<Node>();
@@ -129,15 +129,15 @@ public class BST {
     }
   
     public void CoolPrint() {
-        CoolPrintRecursive(root, "");
+        CoolPrintRecursivo(root, "");
     }
     
-    private void CoolPrintRecursive(Node? node, string indent) {
+    private void CoolPrintRecursivo(Node? node, string indent) {
         if (node == null) return;
         
         Console.WriteLine(indent + node.Key);
-        CoolPrintRecursive(node.Left, indent + "    ");
-        CoolPrintRecursive(node.Right, indent + "    ");
+        CoolPrintRecursivo(node.Left, indent + "    ");
+        CoolPrintRecursivo(node.Right, indent + "    ");
     }
 }
 

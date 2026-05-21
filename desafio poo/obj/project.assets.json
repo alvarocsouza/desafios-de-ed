@@ -8,24 +8,26 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alvro\\.nuget\\packages\\": {}
+    "C:\\Users\\cetad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alvro\\Downloads\\desafios-de-ed\\desafio poo\\desafio poo.csproj",
+      "projectUniqueName": "C:\\Users\\cetad\\Downloads\\C\\desafios-de-ed\\desafio poo\\desafio poo.csproj",
       "projectName": "desafio poo",
-      "projectPath": "C:\\Users\\alvro\\Downloads\\desafios-de-ed\\desafio poo\\desafio poo.csproj",
-      "packagesPath": "C:\\Users\\alvro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alvro\\Downloads\\desafios-de-ed\\desafio poo\\obj\\",
+      "projectPath": "C:\\Users\\cetad\\Downloads\\C\\desafios-de-ed\\desafio poo\\desafio poo.csproj",
+      "packagesPath": "C:\\Users\\cetad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cetad\\Downloads\\C\\desafios-de-ed\\desafio poo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alvro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cetad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
